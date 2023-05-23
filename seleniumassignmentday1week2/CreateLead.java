@@ -26,6 +26,9 @@ public class CreateLead {
 		dri.findElement(By.id("createLeadForm_description")).sendKeys("ABC");
 		dri.findElement(By.id("createLeadForm_primaryEmail")).sendKeys("maha@gmail.com");
 		WebElement stateProvince = dri.findElement(By.id("createLeadForm_generalStateProvinceGeoId"));
+		//dri.findElement(By.id("createLeadForm_primaryPhoneCountryCode")).sendKeys("91");
+		dri.findElement(By.id("createLeadForm_primaryPhoneAreaCode")).sendKeys("91+");
+		dri.findElement(By.id("createLeadForm_primaryPhoneNumber")).sendKeys("1234567890");
 		Select select = new Select(stateProvince);
 		select.selectByVisibleText("New York");
 	    dri.findElement(By.className("smallSubmit")).click();
