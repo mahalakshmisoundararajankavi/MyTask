@@ -10,9 +10,9 @@ import org.testng.annotations.Test;
 
 public class ReadExcelSheetTestCase01 extends BaseClass {
 @Test(alwaysRun = true)
-public static String[][] readExcel() throws IOException {
+public static String[][] readExcel(String filename) throws IOException {
     String[][] data;
-    XSSFWorkbook wb = new XSSFWorkbook("./datasaleforce/keyValue01.xlsx");
+    XSSFWorkbook wb = new XSSFWorkbook("./datasaleforce/"+filename+".xlsx");
         XSSFSheet sheet = wb.getSheetAt(0);
         int rowNum = sheet.getLastRowNum() + 1;
         int columnNum = sheet.getRow(0).getLastCellNum();

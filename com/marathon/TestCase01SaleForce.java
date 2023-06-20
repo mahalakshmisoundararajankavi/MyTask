@@ -11,10 +11,15 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class TestCase01SaleForce extends BaseClass{
+	@BeforeTest
+	public void setValues() {
+		excelfileName = "keyValue01";
+	}
     @Test(dataProvider = "sendData", alwaysRun = true)
 	public  void runSaleForceAppLancher(String questions, String answer) {
         driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();
@@ -43,10 +48,5 @@ public class TestCase01SaleForce extends BaseClass{
         }
         softassert.assertAll();
 	}
-    @DataProvider
-    public String[][] sendData() throws IOException {
-	return ReadExcelSheetTestCase01.readExcel();
-
-	}
- 
+    
 }
