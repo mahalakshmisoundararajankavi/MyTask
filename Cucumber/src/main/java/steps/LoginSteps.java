@@ -44,10 +44,10 @@ public class LoginSteps extends BaseClass  {
 			System.out.println("Login not successfull");
 		}
 	}
-	//	@But("ErrorMessage should be displayed")
-	//	public void verfiyErrorMessage() {
-	//		System.out.println("Error Message ");
-	//	}
+		@But("ErrorMessage should be displayed")
+		public void verfiyErrorMessage() {
+			System.out.println("Error Message ");
+		}
 
 	
 
